@@ -67,7 +67,7 @@ app.post("/api/register", function (req, res, next) {
 });
 
 app.get("/dashboard", function (req, res, next) {
-  res.send("<h1>Welcome home!</h1>");
+  res.render("dashboard");
 });
 
 
