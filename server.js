@@ -33,7 +33,7 @@ app.post("/api/login", function (req, res, next) {
         if (results.length > 0) {
           res.redirect("/dashboard");
         } else {
-          res.redirect("/page");
+          res.redirect("/loginpage");
         }
       }
     );
@@ -63,33 +63,17 @@ app.post("/api/register", function (req, res, next) {
       }
     );
   });
-  res.redirect("/page");
+  res.redirect("/loginpage");
 });
-// app.get("/",function (req, res,next) {
-//     res.send('<h1>Hello Express!</h1>')
-// })
 
 app.get("/dashboard", function (req, res, next) {
   res.send("<h1>Welcome home!</h1>");
 });
 
-// app.get("/thiena",function (req, res,next) {
-// res.render("thiena")
-// })
-// app.get("/day", function (req, res, next){
-// res.send('<h1>21st November 2022</h1>')
-// })
-app.get("/page", function (req, res, next) {
-  res.render("page");
+
+app.get("/loginpage", function (req, res, next) {
+  res.render("loginpage");
 });
-app.get("/login", function (req, res, next) {
-  res.render("login");
-});
-app.post("/login", function (req, res, next) {});
-app.get("/register", function (req, res, next) {
-  res.render("register");
-});
-app.post("/register", function (req, res, next) {});
 
 app.use(function (req, res, next) {
   res.send("<h1>Page Does not exist</h1>");
