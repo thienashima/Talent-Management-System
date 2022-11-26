@@ -87,11 +87,11 @@ a:hover {
   color: rgb(110, 109, 109);
   cursor: pointer;
 }
-.main-skills {
+.main-clubs {
   display: flex;
   margin-top: 20px;
 }
-.main-skills .card {
+.main-clubs .card {
   width: 25%;
   margin: 10px;
   background: #fff;
@@ -100,14 +100,14 @@ a:hover {
   padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-.main-skills .card h3 {
+.main-clubs .card h3 {
   margin: 10px;
   text-transform: capitalize;
 }
-.main-skills .card p {
+.main-clubs .card p {
   font-size: 12px;
 }
-.main-skills .card button {
+.main-clubs .card button {
   background: orangered;
   color: #fff;
   padding: 7px 15px;
@@ -115,17 +115,17 @@ a:hover {
   margin-top: 15px;
   cursor: pointer;
 }
-.main-skills .card i {
+.main-clubs .card i {
   font-size: 22px;
   padding: 10px;
 }
 
-/* Courses*/
-.main-course {
+/* Clubs*/
+.main-club {
   margin-top: 20px;
   text-transform: capitalize;
 }
-.course-box {
+.club-box {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -133,20 +133,20 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-.course-box ul {
+.club-box ul {
   list-style: none;
   display: flex;
 }
-.course-box ul li {
+.club-box ul li {
   margin: 10px;
   color: gray;
   cursor: pointer;
 }
-.course-box ul .active {
+.club-box ul .active {
   color: #000;
   border-bottom: 1px solid #000;
 }
-.course-box .course {
+.club-box .club {
   display: flex;
 }
 .box {
