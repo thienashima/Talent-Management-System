@@ -9,9 +9,11 @@ app.set("views", "views");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyparser.urlencoded({ extended: false }));
+app.use(express.json())
 
 app.post("/api/login", function (req, res, next) {
   const { userid, password } = req.body;
+  console.log(req.body)
   const conn = mysql.createConnection({
     host: "localhost",
     database: "talent_management",
@@ -39,8 +41,32 @@ app.post("/api/login", function (req, res, next) {
     );
   });
 });
-
-
+app.post("/api/joinclubs", function (req, res, next) {
+  const { userid, clubid } = req.body;
+  const conn = mysql.createConnection({
+    host: "localhost",
+    database: "talent_management",
+    password: "",
+    user: "root",
+  });
+  conn.connect(function (error) {
+    if (error) {
+      return res.json(error);
+    }
+    console.log("connect");
+    conn.query(
+      `INSERT INTO registration ( club_id, student_id, registration_id) VALUES ("${clubid}", "${userid}", "${
+        clubid + userid
+      }")`,
+      function (error, results) {
+        if (error) {
+          return res.json({err: error});
+        }
+        res.json({mess: "Student has joined the club"});
+      }
+    );
+  });
+});
 app.post("/api/register", function (req, res, next) {
   const { userid, email, password, name } = req.body;
   const conn = mysql.createConnection({
@@ -71,7 +97,6 @@ app.post("/api/register", function (req, res, next) {
 app.get("/dashboard", function (req, res, next) {
   res.render("dashboard");
 });
-
 
 app.get("/loginpage", function (req, res, next) {
   res.render("loginpage");

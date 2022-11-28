@@ -94,5 +94,11 @@
         #register{
             left: 450px;
         }
+        .fa{
+            margin-right: 10px;
+        }
+        .eye{
+            position: absolute;
+        }
 
     
